@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 7df1617a2050bd3458da21dd81e126dd
+guid: 3bcb8ba4d5b1ae84c9dd94908e3c938b
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6181428773399857211
-    second: sprite_Stage_stone_rocks_0
-  - first:
-      213: -602854597888328039
-    second: sprite_Stage_stone_rocks_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -37,7 +31,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -91,49 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: sprite_Stage_stone_rocks_0
-      rect:
-        serializedVersion: 2
-        x: 196
-        y: 213
-        width: 384
-        height: 224
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3880e208b8d8c550800000000000000
-      internalID: 6181428773399857211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_Stage_stone_rocks_1
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 9
-        width: 751
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99eb7a1ffea32a7f0800000000000000
-      internalID: -602854597888328039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
