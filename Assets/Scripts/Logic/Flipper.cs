@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class orientation : MonoBehaviour
+public class Flipper : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;

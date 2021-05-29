@@ -1,18 +1,24 @@
-﻿using System.Collections;
+﻿/*===========input to player 2====================
+Editor: Oicanji;
+
+"Class used for all basic character inputs"
+==================================================*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class input_player1 : Input_Behavior
+public class input_player2 : Input_Behavior
 {
+
     //################################# -variables referring to movement
     public override void Move_Input(){
-        if(Input.GetKey("a") && !Input.GetKey("d")){
+        if(Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)){
             if(!sprite.flipX){
                 x = -1;
             }else{
                 x = -2;
             }
-        }else if(Input.GetKey("d") && !Input.GetKey("a")){
+        }else if(Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)){
             if(sprite.flipX){
                 x = 1;
             }else{
@@ -25,7 +31,7 @@ public class input_player1 : Input_Behavior
         Move();
     }
     public override void Jump_Input(){
-        if(Input.GetKeyDown("g")){
+        if(Input.GetKeyDown("o")){
             Jump();
         }
     }
