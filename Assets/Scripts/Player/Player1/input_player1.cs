@@ -46,12 +46,9 @@ public class input_player1 : MonoBehaviour
         }
         float moveBy = x * speed;
 
+        bool isWalk = moveBy != 0;        
+        anim.SetBool("walk", isWalk);
         
-        if(moveBy!=0){
-            anim.SetBool("walk",true);
-        }else{
-            anim.SetBool("walk",false);
-        }
         rb.velocity = new Vector2(moveBy, rb.velocity.y); 
         
     }

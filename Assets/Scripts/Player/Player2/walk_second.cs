@@ -50,11 +50,9 @@ public class walk_second : MonoBehaviour
         float moveBy = x * speed;
 
         
-        if(moveBy!=0){
-            anim.SetBool("walk",true);
-        }else{
-            anim.SetBool("walk",false);
-        }
+        bool isWalk = moveBy != 0;        
+        anim.SetBool("walk", isWalk);
+        
         rb.velocity = new Vector2(moveBy, rb.velocity.y); 
         
     }
