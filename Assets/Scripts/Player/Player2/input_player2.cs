@@ -13,13 +13,13 @@ public class input_player2 : Input_Behavior
     //################################# -variables referring to movement
     public override void Move_Input(){
         if(Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)){
-            if(!sprite.flipX){
+            if(!move.sprite.flipX){
                 x = -1;
             }else{
                 x = -2;
             }
         }else if(Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)){
-            if(sprite.flipX){
+            if(move.sprite.flipX){
                 x = 1;
             }else{
                 x = 2;

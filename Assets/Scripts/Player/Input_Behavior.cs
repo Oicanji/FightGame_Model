@@ -11,10 +11,8 @@ public class Input_Behavior : MonoBehaviour
 {
     public int x;
     public Move_Behavior move;
-    public SpriteRenderer sprite;
     void Start(){
         move = GetComponent<Move_Behavior>();
-        sprite = GetComponent<SpriteRenderer>();
     }
     void Update(){
         Move_Input();

@@ -24,9 +24,12 @@ public class Move_Behavior : MonoBehaviour
 
     //public status
     public bool OnFloor = false;
+    
+    public SpriteRenderer sprite;
     void Start(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>(); 
+        sprite = GetComponent<SpriteRenderer>();
 
         //reference a others scripts
         input_contoller = GetComponent<Input_Behavior>();
