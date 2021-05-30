@@ -8,8 +8,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class input_player2 : Input_Behavior
-{
-
+{    
+    void Start(){
+        currect_player = 2;
+    }
     //################################# -variables referring to movement
     public override void Move_Input(){
         if(Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)){

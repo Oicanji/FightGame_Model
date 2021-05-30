@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class input_player1 : Input_Behavior
 {
+    /*void Start(){
+        currect_player = 1;
+    }*/
     //################################# -variables referring to movement
     public override void Move_Input(){
         if(Input.GetKey("a") && !Input.GetKey("d")){

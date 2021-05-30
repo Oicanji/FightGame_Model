@@ -11,7 +11,8 @@ public class Input_Behavior : MonoBehaviour
 {
     public int x;
     public Move_Behavior move;
-    void Start(){
+    public int currect_player;
+    public virtual  void Start(){
         move = GetComponent<Move_Behavior>();
     }
     void Update(){

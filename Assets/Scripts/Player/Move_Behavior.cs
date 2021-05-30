@@ -58,6 +58,13 @@ public class Move_Behavior : MonoBehaviour
             anim.SetBool("jump",true);
         }
     }
+    public void Squat(){
+        if(OnFloor){
+
+        }else{
+            
+        }
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
