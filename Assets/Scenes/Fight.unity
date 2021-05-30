@@ -620,6 +620,7 @@ GameObject:
   - component: {fileID: 1347784630}
   - component: {fileID: 1347784629}
   - component: {fileID: 1347784634}
+  - component: {fileID: 1347784635}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -656,7 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   move: {fileID: 0}
-  sprite: {fileID: 0}
+  currect_player: 0
 --- !u!95 &1347784630
 Animator:
   serializedVersion: 3
@@ -792,6 +793,24 @@ MonoBehaviour:
   tenacity: 1
   jump_force: 14
   OnFloor: 0
+  sprite: {fileID: 0}
+--- !u!114 &1347784635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347784627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3135f7e81d01e13478880ad262ab5055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  move: {fileID: 0}
+  currect_player: 2
+  controller: {fileID: 0}
+  input: {fileID: 11400000, guid: f373b16a14caf6b48a737312e4c3f2e0, type: 2}
 --- !u!1 &1403070388
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,8 +905,8 @@ GameObject:
   - component: {fileID: 1409853621}
   - component: {fileID: 1409853619}
   - component: {fileID: 1409853618}
-  - component: {fileID: 1409853622}
   - component: {fileID: 1409853623}
+  - component: {fileID: 1409853622}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -1036,12 +1055,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1409853616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bfbf197cd986684e87a7a7b372b7e44, type: 3}
+  m_Script: {fileID: 11500000, guid: 3135f7e81d01e13478880ad262ab5055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 0
   move: {fileID: 0}
-  sprite: {fileID: 0}
+  currect_player: 1
+  controller: {fileID: 0}
+  input: {fileID: 11400000, guid: bb1bf35766e96ae48812674a02ce157c, type: 2}
 --- !u!114 &1409853623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,6 +1081,7 @@ MonoBehaviour:
   tenacity: 1
   jump_force: 14
   OnFloor: 0
+  sprite: {fileID: 0}
 --- !u!1 &1412609788
 GameObject:
   m_ObjectHideFlags: 0

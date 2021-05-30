@@ -6,14 +6,16 @@ Editor: Oicanji;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Input_Behavior : MonoBehaviour
 {
     public int x;
     public Move_Behavior move;
     public int currect_player;
+    public Controller controller;
+    public ControllerConfig input;
     public virtual  void Start(){
         move = GetComponent<Move_Behavior>();
+        controller = new Controller(input);
     }
     void Update(){
         Move_Input();
@@ -22,13 +24,29 @@ public class Input_Behavior : MonoBehaviour
     //################################ - override functions
 
     //################################ - movent
-    public virtual void Move_Input(){
-        //set a differents inputs
+    void Move_Input(){
+        if(controller.isWalkLeft()){
+            if(!move.sprite.flipX){
+                x = -1;
+            }else{
+                x = -2;
+            }
+        }else if(controller.isWalkRight()){
+            if(move.sprite.flipX){
+                x = 1;
+            }else{
+                x = 2;
+            }
+        }else{
+            x = 0;
+        }
+        Move();
     }
     public void Move(){
         move.Move(x);
     }
-    public virtual void Jump_Input(){
+    public void Jump_Input(){
+        if(controller.isJump()) Jump();
     }
     public void Jump(){
         move.Jump();
