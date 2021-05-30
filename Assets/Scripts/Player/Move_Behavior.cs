@@ -36,27 +36,23 @@ public class Move_Behavior : MonoBehaviour
     }
 
     public void Move(int x){
-        if(!stun){
-            if(x!=0){
-                anim.SetBool("walk",true);
-            }else{
-                anim.SetBool("walk",false);
-            }
-            float moveBy;
-            if(slow){
-                moveBy = (x * tenacity);
-            }else{
-                moveBy = (x * speed);
-            }
-            rb.velocity = new Vector2(moveBy, rb.velocity.y); 
-        }
+        if(stun) return;
+
+        bool isWalk = ( x != 0 );
+        anim.SetBool("walk", isWalk);
+        
+        float moveBy = (slow)
+        ? (x * tenacity)
+        : (x * speed);
+        
+        rb.velocity = new Vector2(moveBy, rb.velocity.y); 
     }
     public void Jump(){
-        if(OnFloor){
-            rb.AddForce(new Vector2(jump_force, jump_force), ForceMode2D.Impulse);
-            OnFloor = false;
-            anim.SetBool("jump",true);
-        }
+        if(!OnFloor) return;
+
+        rb.AddForce(new Vector2(jump_force, jump_force), ForceMode2D.Impulse);
+        OnFloor = false;
+        anim.SetBool("jump", true);
     }
     public void Squat(){
         if(OnFloor){
@@ -67,10 +63,9 @@ public class Move_Behavior : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
-        {
-            anim.SetBool("jump",false);
-            OnFloor = true;
-        }
+        if (collision.gameObject.tag != "Floor") return;
+            
+        anim.SetBool("jump",false);
+        OnFloor = true;
     }
 }

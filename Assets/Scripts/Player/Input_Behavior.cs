@@ -45,10 +45,9 @@ public class Input_Behavior : MonoBehaviour
     public void Move(){
         move.Move(x);
     }
+    
     public void Jump_Input(){
-        if(controller.isJump()) Jump();
+        if(controller.isJump()) move.Jump();
     }
-    public void Jump(){
-        move.Jump();
-    }
+
 }
