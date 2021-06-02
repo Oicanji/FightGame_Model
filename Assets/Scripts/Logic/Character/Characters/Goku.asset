@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033fb99c2c4a751418667e9adfee8c3b, type: 3}
   m_Name: Goku
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  sprite: {fileID: 0}
-  anim: {fileID: 0}
-  weight: 0
-  flight: 0
-  speed: 0
-  tenacity: 0
-  jump_force: 0
-  life: 0
-  thoughness: 0
-  attack_speed: 0
-  damage: 0
+  id: 2
+  name: Goku
+  sprite: {fileID: 5435686491333325014, guid: 3a63f09c28774be48b7f0a239559acc1, type: 3}
+  anim: {fileID: 22100000, guid: 3f2bc9bcf86697447a04257401f198a6, type: 2}
+  weight: 1
+  flight: 1
+  speed: 6
+  tenacity: 4
+  jump_force: 8
+  life: 40
+  thoughness: 10
+  attack_speed: 2
+  damage: 10
   hurt: {fileID: 0}
   combo_list: []

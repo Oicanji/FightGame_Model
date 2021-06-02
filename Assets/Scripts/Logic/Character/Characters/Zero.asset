@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033fb99c2c4a751418667e9adfee8c3b, type: 3}
   m_Name: Zero
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  sprite: {fileID: 0}
-  anim: {fileID: 0}
-  weight: 0
+  id: 3
+  name: Zero
+  sprite: {fileID: -9026209206373607449, guid: ec64a24db552b2e4e841f3ff6872ce06, type: 3}
+  anim: {fileID: 22100000, guid: e4650f48108c15a4aaf42d51a7d15b76, type: 2}
+  weight: 0.5
   flight: 0
-  speed: 0
-  tenacity: 0
-  jump_force: 0
-  life: 0
-  thoughness: 0
-  attack_speed: 0
-  damage: 0
+  speed: 6
+  tenacity: 5
+  jump_force: 6
+  life: 10
+  thoughness: 5
+  attack_speed: 5
+  damage: 2
   hurt: {fileID: 0}
   combo_list: []

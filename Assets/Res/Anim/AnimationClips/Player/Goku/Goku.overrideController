@@ -7,5 +7,13 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Goku
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 1de3f536e5fc15d4593685b3f1e117ca, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: bc55e8609e1f4ae4f9c72961ff55afb0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9e555dcb063b9c441939aa5aa36e95be, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a92100608e6aa4240b13d5145939540f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cf63640d24afa844b9b45d221bcc9478, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c80058e1a29c531448c9f5dea1f68645, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 37afe046f25388144b7958bae66f17f1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 38db3b26c08a72148a83ea2172af454c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c8629c894c450da4694b424aeab655f9, type: 2}
