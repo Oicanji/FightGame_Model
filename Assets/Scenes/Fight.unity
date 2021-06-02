@@ -655,9 +655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa9f3afc685f244baba5be6aca312fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  move: {fileID: 0}
-  currect_player: 0
 --- !u!95 &1347784630
 Animator:
   serializedVersion: 3
@@ -718,7 +715,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_Sprite: {fileID: 6268282017268120247, guid: fab229955083f78498aa657d44235a59,
     type: 3}
-  m_Color: {r: 0.028390888, g: 0.15990035, b: 0.5471698, a: 1}
+  m_Color: {r: 0.12415449, g: 0.33736104, b: 0.8490566, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -989,7 +986,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_Sprite: {fileID: 6268282017268120247, guid: fab229955083f78498aa657d44235a59,
     type: 3}
-  m_Color: {r: 0.8867924, g: 0.8152002, b: 0.27189392, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1037,7 +1034,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player2
   m_EditorClassIdentifier: 
   Id: 0
-  analog_left: Left arrow key
-  analog_right: Right arrow key
-  analog_up: Up arrow key
-  analog_down: Down arrow key
+  analog_left: left
+  analog_right: right
+  analog_up: up
+  analog_down: down
   jump: o
