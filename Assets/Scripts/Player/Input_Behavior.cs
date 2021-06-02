@@ -17,14 +17,10 @@ public class Input_Behavior : MonoBehaviour
         move = GetComponent<Move_Behavior>();
         controller = new Controller(input);
     }
-    void Update(){
-        Move_Input();
-        Jump_Input();
-    }
     //################################ - override functions
 
     //################################ - movent
-    void Move_Input(){
+    public void Move_Input(){
         if(controller.isWalkLeft()){
             if(!move.sprite.flipX){
                 x = -1;

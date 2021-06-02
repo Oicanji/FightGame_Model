@@ -10,11 +10,8 @@ public class Life_Behavior : MonoBehaviour
     public int tier = 0;
 
 
-    void Start() {
+    public void SetIniGame() {
         life_actual = life_max;
-    }
-    void Update(){
-        
     }
     public void tier_break(){
 

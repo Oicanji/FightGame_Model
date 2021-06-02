@@ -1,8 +1,8 @@
 /*===========input to player 1====================
-Editor: Oicanji;
 
 "Class used for all basic character movements and 
 logic to move a player"
+
 ==================================================*/
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ public class Move_Behavior : MonoBehaviour
     public bool slow = false;
     public bool stun = false;
 
-    Input_Behavior input_contoller;
+    Input_Behavior input_controller;
 
     //att
     public float speed;
@@ -32,7 +32,7 @@ public class Move_Behavior : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         //reference a others scripts
-        input_contoller = GetComponent<Input_Behavior>();
+        input_controller = GetComponent<Input_Behavior>();
     }
 
     public void Move(int x){

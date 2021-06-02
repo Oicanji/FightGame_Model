@@ -24,6 +24,8 @@ public class Player_Controller : MonoBehaviour
     [Header("Character Select")]
     public CharacterConfig character;
 
+    //others vars
+    private bool ini = false;
 
     void Start() {
             life = GetComponent<Life_Behavior>();
@@ -45,9 +47,16 @@ public class Player_Controller : MonoBehaviour
 
         animatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
         anim.runtimeAnimatorController = character.anim;
+
         //set attributes
+        //set a life skills
+        life.life_max = character.life;
+        life.SetIniGame();
+
         //set a movement skills
+
         //set a attack skills
+
         //set a movement skills
         rb.mass = character.weight;
 
@@ -66,6 +75,15 @@ public class Player_Controller : MonoBehaviour
         //set audio params
 
         //set a game start
+        ini = true;
+    }
+    void Update(){
+        if(ini){
+            if(life.life_actual > 0){
+                input.Move_Input();
+                input.Jump_Input();
+            }
+        }
     }
 
 }
