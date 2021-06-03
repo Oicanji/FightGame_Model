@@ -21,20 +21,6 @@ public class Input_Behavior : MonoBehaviour
 
     //################################ - movent
     public void Move_Input(){
-        // bool playerInLeft = !move.sprite.flipX;
-        // int speedFront = (playerInLeft) ? 1 : -1;
-        // int speedBack = speedFront * -1;
-
-        // if(controller.isWalkFront(playerInLeft)){
-        //     x = speedFront * 2;
-        // } else if(controller.isWalkBack(playerInLeft)){
-        //     x = speedBack * 1;
-        // } else {
-        //     x = 0;
-        // }
-
-        
-
         if(controller.isWalkLeft()){
             if(!move.sprite.flipX){
                 x = -1;
