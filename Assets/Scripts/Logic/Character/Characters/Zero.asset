@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   name: Zero
-  sprite: {fileID: -9026209206373607449, guid: ec64a24db552b2e4e841f3ff6872ce06, type: 3}
+  sprite: {fileID: 21300000, guid: 74a9b5bb46c5ed347b22dfcf878d394e, type: 3}
   anim: {fileID: 22100000, guid: e4650f48108c15a4aaf42d51a7d15b76, type: 2}
   weight: 1
   flight: 0

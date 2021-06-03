@@ -41,7 +41,6 @@ public class Move_Behavior : MonoBehaviour
     }
 
     public void Move(int x){
-
         bool isWalk = ( x != 0 );
         anim.SetBool("walk", isWalk);
         anim.SetFloat("axis x", x);
@@ -80,7 +79,11 @@ public class Move_Behavior : MonoBehaviour
             anim.SetBool("sneak", true);
             OnSneak = true;
         }else{
-            //rb.velocity = new Vector2(0.0f, jump_force*-1.0f);
+            OnFloor = true;
+            haveDoubleJump = 0;
+            anim.SetBool("jump",false);
+            anim.SetBool("double_jump", false);
+            rb.velocity = new Vector2(0.0f, jump_force*-1.0f);
             //Cancelar o Pulo
         }
     }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   name: Goku
-  sprite: {fileID: 5435686491333325014, guid: 3a63f09c28774be48b7f0a239559acc1, type: 3}
+  sprite: {fileID: 21300000, guid: ff9f21fcca761754fa1f9d432822c53e, type: 3}
   anim: {fileID: 22100000, guid: 3f2bc9bcf86697447a04257401f198a6, type: 2}
   weight: 1
   flight: 1

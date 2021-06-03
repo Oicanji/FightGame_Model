@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   name: Ken
-  sprite: {fileID: 7997522297521934239, guid: 4c70df9515fc2b545a7cfe867379a969, type: 3}
+  sprite: {fileID: 3370588524471653445, guid: 5fe9409fc0522c84797b6ca19b46a065, type: 3}
   anim: {fileID: 22100000, guid: c438b3013496c5144aeb5751988fbe8e, type: 2}
   weight: 1.6
   flight: 0
