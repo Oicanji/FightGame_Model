@@ -10,6 +10,7 @@ public class ControllerConfig : ScriptableObject
     public string analog_right;
     public string analog_up;
     public string analog_down;
+    public string attack;
     public string jump;
-
+    public string kick;
 }

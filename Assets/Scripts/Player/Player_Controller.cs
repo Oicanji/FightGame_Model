@@ -81,7 +81,14 @@ public class Player_Controller : MonoBehaviour
     void Update(){
         if(ini){
             if(life.life_actual > 0){
-                input.Move_Input();
+                //inputs analogs
+                if(!move.stun){
+                    input.Move_Input();
+                    input.Block_Input();
+                    input.Sneak_Input();
+                }
+
+                //inputs buttons
                 input.Jump_Input();
             }
         }

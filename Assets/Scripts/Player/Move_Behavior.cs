@@ -10,8 +10,6 @@ using UnityEngine;
 
 public class Move_Behavior : MonoBehaviour
 {
-    private Animator anim;
-    private Rigidbody2D rb;
     public bool slow = false;
     public bool stun = false;
 
@@ -25,9 +23,13 @@ public class Move_Behavior : MonoBehaviour
 
     //public status
     public bool OnFloor = false;
+    public bool OnBlock = false;
+    public bool OnSneak = false;
     public int haveDoubleJump = 0;
     //private status
-    
+
+    private Animator anim;
+    private Rigidbody2D rb;
     public SpriteRenderer sprite;
     void Start(){
         anim = GetComponent<Animator>();
@@ -39,41 +41,72 @@ public class Move_Behavior : MonoBehaviour
     }
 
     public void Move(int x){
-        if(stun) return;
 
         bool isWalk = ( x != 0 );
         anim.SetBool("walk", isWalk);
         anim.SetFloat("axis x", x);
         
+        //cancel block and sneak
+        if(x!=0){
+            Cancel_Block();
+            Cancel_Sneak();
+        }
+
         float moveBy = (slow)
         ? (x * tenacity)
         : (x * speed);
         
         rb.velocity = new Vector2(moveBy, rb.velocity.y); 
     }
-    public void Jump(){
+    public void Block(){
+        if(rb.velocity[0]!=0) return;
+        if(OnSneak && OnFloor){
+            anim.SetBool("block", true);
+            OnBlock = true;
+            //Abaixar e Defender
+        }else if(!OnSneak){
+            anim.SetBool("block", true);
+            OnBlock = true;
+            //Defender
+        }
+    }
+    public void Cancel_Block(){
+        anim.SetBool("block", false);
+        OnBlock = false;
+    }
+    public void Sneak(){
+        if(rb.velocity[0]!=0) return;
         if(OnFloor){
-            rb.AddForce(new Vector2(jump_force, jump_force), ForceMode2D.Impulse);
+            anim.SetBool("sneak", true);
+            OnSneak = true;
+        }else{
+            //rb.velocity = new Vector2(0.0f, jump_force*-1.0f);
+            //Cancelar o Pulo
+        }
+    }
+    public void Cancel_Sneak(){
+        anim.SetBool("sneak", false);
+        OnSneak = false;
+    }
+    public void Jump(){
+        Cancel_Block();
+        Cancel_Sneak();
+
+        if(OnFloor){
+            rb.AddForce(new Vector2(0.0f, jump_force), ForceMode2D.Impulse);
             OnFloor = false;
             anim.SetBool("jump", true);
             haveDoubleJump++;
         }else if(haveDoubleJump>0){
             if(rb.velocity[1] > 0.0f){
-                rb.AddForce(new Vector2(jump_double_force/1.5f, jump_double_force/1.5f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0.0f, jump_double_force/1.5f), ForceMode2D.Impulse);
             }else if(rb.velocity[1] < 0.0f && rb.velocity[1] > -3.0f){
-                rb.AddForce(new Vector2(jump_double_force, jump_double_force), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0.0f, jump_double_force), ForceMode2D.Impulse);
             }else{
-                rb.AddForce(new Vector2(jump_double_force*1.5f, jump_double_force*1.5f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0.0f, jump_double_force*1.5f), ForceMode2D.Impulse);
             }
             anim.SetBool("double_jump", true);
             haveDoubleJump--;
-        }
-    }
-    public void Squat(){
-        if(OnFloor){
-
-        }else{
-            
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

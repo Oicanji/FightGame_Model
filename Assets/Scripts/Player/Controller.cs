@@ -28,7 +28,12 @@ public class Controller : MonoBehaviour{
         ? isWalkRight()
         : isWalkLeft();
     }
-
+    public bool isSneak(){
+        return Input.GetKey(config.analog_down);
+    }
+    public bool isBlock(){
+        return Input.GetKey(config.analog_up);
+    }
     public bool isJump(){
         return Input.GetKeyDown(config.jump);
     }
