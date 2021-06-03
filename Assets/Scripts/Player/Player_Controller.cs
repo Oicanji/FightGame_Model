@@ -71,6 +71,7 @@ public class Player_Controller : MonoBehaviour
         move.speed = character.speed;
         move.tenacity = character.tenacity;
         move.jump_force = character.jump_force;
+        move.jump_double_force = character.jump_double_force;
 
         //set audio params
 

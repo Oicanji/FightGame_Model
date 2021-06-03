@@ -18,6 +18,7 @@ public class CharacterConfig : ScriptableObject
     public float speed;
     public float tenacity;
     public float jump_force;
+    public float jump_double_force;
 
     [Header("Attributes Move")]
     public float life;

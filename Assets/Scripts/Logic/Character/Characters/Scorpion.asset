@@ -21,6 +21,7 @@ MonoBehaviour:
   speed: 4
   tenacity: 1
   jump_force: 14
+  jump_double_force: 4
   life: 20
   thoughness: 0
   attack_speed: 1

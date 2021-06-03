@@ -638,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 1347784627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.57, y: -1.87, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_Children:
   - {fileID: 1289852549}
   m_Father: {fileID: 416808646}
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cd374b75d749f4fb80d2b9e625a387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 02c9be202a4407e4383cbddbe83a82f1, type: 2}
+  character: {fileID: 11400000, guid: 67475688bb06e2a439bb6a8a17d54330, type: 2}
 --- !u!95 &1347784630
 Animator:
   serializedVersion: 3
@@ -791,7 +791,9 @@ MonoBehaviour:
   speed: 4
   tenacity: 1
   jump_force: 14
+  jump_double_force: 0
   OnFloor: 0
+  haveDoubleJump: 0
   sprite: {fileID: 0}
 --- !u!114 &1347784635
 MonoBehaviour:
@@ -940,7 +942,7 @@ Transform:
   m_GameObject: {fileID: 1409853616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.69, y: -1.84, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_Children:
   - {fileID: 748093123}
   m_Father: {fileID: 416808646}
@@ -956,7 +958,7 @@ Animator:
   m_GameObject: {fileID: 1409853616}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1de3f536e5fc15d4593685b3f1e117ca, type: 2}
+  m_Controller: {fileID: 22100000, guid: 3f2bc9bcf86697447a04257401f198a6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1097,7 +1099,9 @@ MonoBehaviour:
   speed: 4
   tenacity: 1
   jump_force: 14
+  jump_double_force: 0
   OnFloor: 0
+  haveDoubleJump: 0
   sprite: {fileID: 0}
 --- !u!114 &1409853624
 MonoBehaviour:
@@ -1111,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cd374b75d749f4fb80d2b9e625a387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 02c9be202a4407e4383cbddbe83a82f1, type: 2}
+  character: {fileID: 11400000, guid: e7afcd133bb164b42b9fbf42b24b771c, type: 2}
 --- !u!114 &1409853625
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,11 +16,12 @@ MonoBehaviour:
   name: Zero
   sprite: {fileID: -9026209206373607449, guid: ec64a24db552b2e4e841f3ff6872ce06, type: 3}
   anim: {fileID: 22100000, guid: e4650f48108c15a4aaf42d51a7d15b76, type: 2}
-  weight: 0.5
+  weight: 1
   flight: 0
   speed: 6
   tenacity: 5
-  jump_force: 6
+  jump_force: 10
+  jump_double_force: 14
   life: 10
   thoughness: 5
   attack_speed: 5
