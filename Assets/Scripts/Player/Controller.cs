@@ -10,11 +10,11 @@ public class Controller : MonoBehaviour{
     }
 
     public bool isWalkLeft(){
-        return Input.GetKey(config.analog_left) && !Input.GetKey(config.analog_right);
+        return Input.GetKey(config.analog_left) && !Input.GetKey(config.analog_right) && !isAttack();
     }
 
     public bool isWalkRight(){
-        return Input.GetKey(config.analog_right) && !Input.GetKey(config.analog_left);
+        return Input.GetKey(config.analog_right) && !Input.GetKey(config.analog_left) && !isAttack();
     }
 
     public bool isWalkBack(bool playerInLeft){
@@ -32,7 +32,13 @@ public class Controller : MonoBehaviour{
         return Input.GetKey(config.analog_down);
     }
     public bool isBlock(){
-        return Input.GetKey(config.analog_up);
+        return Input.GetKey(config.analog_up) && !isAttack();
+    }
+    public bool isAttack(){
+        return Input.GetKeyDown(config.attack);
+    }
+    public bool isKick(){
+        return Input.GetKeyDown(config.kick);
     }
     public bool isJump(){
         return Input.GetKeyDown(config.jump);

@@ -19,6 +19,7 @@ public class Player_Controller : MonoBehaviour
     private Animator anim;
     protected AnimatorOverrideController animatorOverrideController;
     private SpriteRenderer sprite;
+    private BoxCollider2D collider;
 
     //Variable preset to Player
     [Header("Character Select")]
@@ -32,6 +33,7 @@ public class Player_Controller : MonoBehaviour
             attack = GetComponent<Attack_Behavior>();
             move = GetComponent<Move_Behavior>();
             input = GetComponent<Input_Behavior>();
+            collider = transform.GetChild(0).GetComponent<BoxCollider2D>();
 
             
             anim = GetComponent<Animator>();
@@ -53,9 +55,12 @@ public class Player_Controller : MonoBehaviour
         life.life_max = character.life;
         life.SetIniGame();
 
-        //set a movement skills
-
         //set a attack skills
+        attack.damage = character.damage;
+        attack.attack_speed = character.attack_speed;
+
+        //set speed to animation attack
+        anim.SetFloat("attack_speed", (0.2f*attack.attack_speed)*2);
 
         //set a movement skills
         rb.mass = character.weight;
@@ -81,17 +86,37 @@ public class Player_Controller : MonoBehaviour
     void Update(){
         if(ini){
             if(life.life_actual > 0){
-                //inputs analogs
-                if(!move.stun){
+                if(!move.stun && !attack.inAttack){
+                    //inputs analogics
                     input.Move_Input();
                     input.Block_Input();
                     input.Sneak_Input();
-                }
 
-                //inputs buttons
-                input.Jump_Input();
+                    //inputs buttons
+                    input.Jump_Input();
+                    input.Attack_Input();
+                }
+                
+                //set realtive bound to player sprite
+                SpriteBounds();
             }
         }
     }
+    void SpriteBounds(){
+        Vector2 S = sprite.bounds.size;
+            collider.size = S/5;
+            collider.offset = new Vector2 (0, S.y/10f);
+    }
+    /*          -to Basic Attack-
+            Vector2 S = sprite.bounds.size;
+            collider.size = S/14;
+            collider.offset = new Vector2 (S.y/14f, S.y/6f);   
 
+                -to Large Ranger-
+    
+                -To Split Attack-
+            Vector2 S = sprite.bounds.size;
+            collider.size = S/14;
+            collider.offset = new Vector2 (S.y/14f, S.y/20f);   
+    */
 }

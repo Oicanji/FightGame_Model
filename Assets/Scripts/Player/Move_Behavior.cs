@@ -13,8 +13,6 @@ public class Move_Behavior : MonoBehaviour
     public bool slow = false;
     public bool stun = false;
 
-    Input_Behavior input_controller;
-
     //att
     public float speed;
     public float tenacity;
@@ -30,6 +28,7 @@ public class Move_Behavior : MonoBehaviour
 
     private Animator anim;
     private Rigidbody2D rb;
+    private Input_Behavior input_controller;
     public SpriteRenderer sprite;
     void Start(){
         anim = GetComponent<Animator>();

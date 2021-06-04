@@ -17,4 +17,6 @@ MonoBehaviour:
   analog_right: d
   analog_up: w
   analog_down: s
+  attack: f
   jump: g
+  kick: h
