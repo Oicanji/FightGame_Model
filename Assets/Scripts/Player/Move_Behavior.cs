@@ -101,11 +101,11 @@ public class Move_Behavior : MonoBehaviour
             haveDoubleJump++;
         }else if(haveDoubleJump>0){
             if(rb.velocity[1] > 0.0f){
-                rb.AddForce(new Vector2(0.0f, jump_double_force/1.5f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0.0f, jump_double_force/1.8f), ForceMode2D.Impulse);
             }else if(rb.velocity[1] < 0.0f && rb.velocity[1] > -3.0f){
                 rb.AddForce(new Vector2(0.0f, jump_double_force), ForceMode2D.Impulse);
             }else{
-                rb.AddForce(new Vector2(0.0f, jump_double_force*1.5f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0.0f, jump_double_force*1.8f), ForceMode2D.Impulse);
             }
             anim.SetBool("double_jump", true);
             haveDoubleJump--;

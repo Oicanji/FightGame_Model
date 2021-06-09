@@ -9,12 +9,19 @@ using UnityEngine;
 public class Input_Behavior : MonoBehaviour
 {
     public int x;
-    public Move_Behavior move;
     public int currect_player;
+
+    //Reference to Actions Inputs
+    public Move_Behavior move;
+    public Attack_Behavior attack;
+    
+    //Others References
     public Controller controller;
     public ControllerConfig input;
     public virtual  void Start(){
         move = GetComponent<Move_Behavior>();
+        attack = GetComponent<Attack_Behavior>();
+
         controller = new Controller(input);
     }
     //################################ - override functions
@@ -38,9 +45,34 @@ public class Input_Behavior : MonoBehaviour
     public void Move(){
         move.Move(x);
     }
-    
-    public void Jump_Input(){
-        if(controller.isJump()) move.Jump();
+    public void Block_Input(){
+        if(controller.isBlock()){
+            move.Block();
+        }else{
+            move.Cancel_Block();
+        }
     }
-
+    public void Sneak_Input(){
+        if(controller.isSneak()){
+            move.Sneak();
+        }else{
+            move.Cancel_Sneak();
+        }
+    }
+    public void Jump_Input(){
+        if(controller.isJump()){
+            move.Jump();
+        }
+    }
+    //############################### attack
+    public void Attack_Input(){
+        if(controller.isAttack()){
+            attack.Attack();
+        }
+    }
+    public void Kick_Input(){
+        if(controller.isKick()){
+            attack.Kick();
+        }
+    }
 }
