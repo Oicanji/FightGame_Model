@@ -28,7 +28,7 @@ public class Attack_Behavior : MonoBehaviour
     }
 
     IEnumerator AttackCountdown(string variable_animator, float strong){
-        float calculo_disgraçado = (strong*5)*(0.2f*(attack_speed+0.2f));        
+        float calculo_disgraçado = 0.2f*(attack_speed+2);     
         yield return new WaitForSeconds(calculo_disgraçado);
         Debug.Log(calculo_disgraçado);
         inAttack = false;
@@ -42,7 +42,7 @@ public class Attack_Behavior : MonoBehaviour
             collider_attack.size = S/16;
             collider_attack.offset = new Vector2 (S.y/18f, S.y/6f);   
 
-        StartCoroutine(AttackCountdown("attack",1.0f));
+        StartCoroutine(AttackCountdown("attack",1.0f)); 
     }
     public void Kick(){
         inAttack = true;

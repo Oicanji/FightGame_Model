@@ -60,7 +60,7 @@ public class Player_Controller : MonoBehaviour
         attack.attack_speed = character.attack_speed;
 
         //set speed to animation attack
-        anim.SetFloat("attack_speed", (0.2f*(attack.attack_speed+0.2f)));
+        anim.SetFloat("attack_speed", (0.2f*(attack.attack_speed+2)));
 
         //set a movement skills
         rb.mass = character.weight;
