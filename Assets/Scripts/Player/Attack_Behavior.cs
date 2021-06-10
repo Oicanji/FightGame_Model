@@ -27,10 +27,8 @@ public class Attack_Behavior : MonoBehaviour
         collider_attack = transform.GetChild(1).GetComponent<BoxCollider2D>();
     }
 
-    IEnumerator AttackCountdown(string variable_animator, float strong){
-        float calculo_disgraçado = 0.2f*(attack_speed+2);     
-        yield return new WaitForSeconds(calculo_disgraçado);
-        Debug.Log(calculo_disgraçado);
+    IEnumerator AttackCountdown(string variable_animator, float strong){ 
+        yield return new WaitForSeconds(attack_speed/3.777f);
         inAttack = false;
         anim.SetFloat(variable_animator, 0.0f);
     }
