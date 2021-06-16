@@ -24,6 +24,7 @@ public class Player_Controller : MonoBehaviour
     //Variable preset to Player
     [Header("Character Select")]
     public CharacterConfig character;
+    public string player;
 
     //others vars
     private bool ini = false;
@@ -40,48 +41,7 @@ public class Player_Controller : MonoBehaviour
             rb = GetComponent<Rigidbody2D>(); 
             sprite = GetComponent<SpriteRenderer>();
 
-            CharSet();
-    }
-    public void CharSet(){
-        //set names and others importants params
-
-        //set graphics params
-
-        animatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
-        anim.runtimeAnimatorController = character.anim;
-
-        //set attributes
-        //set a life skills
-        life.life_max = character.life;
-        life.SetIniGame();
-
-        //set a attack skills
-        attack.damage = character.damage;
-        attack.attack_speed = character.attack_speed;
-
-        //set speed to animation attack
-        anim.SetFloat("attack_speed", 1/attack.attack_speed);
-
-        //set a movement skills
-        rb.mass = character.weight;
-
-        if(character.flight){
-            //"simulated" a char be fly
-            rb.gravityScale = 0.9f;
-        }else{
-            //as char no fly
-            rb.gravityScale = 3.0f;
-        }
-
-        move.speed = character.speed;
-        move.tenacity = character.tenacity;
-        move.jump_force = character.jump_force;
-        move.jump_double_force = character.jump_double_force;
-
-        //set audio params
-
-        //set a game start
-        ini = true;
+            CreatePlayer();
     }
     void Update(){
         if(ini){
@@ -107,5 +67,51 @@ public class Player_Controller : MonoBehaviour
         Vector2 S = sprite.bounds.size;
             collider.size = S/5;
             collider.offset = new Vector2 (0, S.y/10f);
+    }
+    public void CreatePlayer(){
+        setAnimator();
+        setGui();
+
+        //set a attack skills
+        attack.damage = character.damage;
+        attack.attack_speed = character.attack_speed;
+        attack.player = player;
+
+        //set speed to animation attack
+        anim.SetFloat("attack_speed", 1/attack.attack_speed);
+
+        //set a movement skills
+        rb.mass = character.weight;
+
+        if(character.flight){
+            //"simulated" a char be fly
+            rb.gravityScale = 0.9f;
+        }else{
+            //as char no fly
+            rb.gravityScale = 3.0f;
+        }
+
+        move.speed = character.speed;
+        move.tenacity = character.tenacity;
+        move.jump_force = character.jump_force;
+        move.jump_double_force = character.jump_double_force;
+
+        //set audio params
+
+        //set a game start
+        ini = true;
+    }
+
+    public void setAnimator(){
+        animatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
+        anim.runtimeAnimatorController = character.anim;
+    }
+    public void setGui(){
+        setLife();
+
+    }
+    public void setLife(){
+        life.life_max = character.life;
+        life.SetIniGame();
     }
 }

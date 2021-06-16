@@ -10,6 +10,7 @@ public class Attack_Behavior : MonoBehaviour
 
     //others vars
     public bool inAttack = false;
+    public string player;
 
     //Reference Vars
     private Animator anim;
@@ -17,10 +18,12 @@ public class Attack_Behavior : MonoBehaviour
     public SpriteRenderer sprite;
     private Input_Behavior input_controller;
     private BoxCollider2D collider_attack;
+    private Gui_Behavior gui;
     void Start(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>(); 
         sprite = GetComponent<SpriteRenderer>();
+        gui = GetComponent<Gui_Behavior>();
 
         //reference a others scripts
         input_controller = GetComponent<Input_Behavior>();
@@ -49,6 +52,11 @@ public class Attack_Behavior : MonoBehaviour
         StartCoroutine(AttackCountdown("attack",0.75f,1.2f));
     }
     public void appliedDamage(){
-        Debug.Log("bati em alguém");
+        if(player == "Player1"){
+            gui.SetLifeActual(player, 20f, 0.5f);
+            Debug.Log("bati em player 2");
+        }else{
+            Debug.Log("bati em player 1");
+        }
     }
 }

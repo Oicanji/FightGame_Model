@@ -8,6 +8,12 @@ public class Collider_Behaviour : MonoBehaviour
     public Attack_Behavior attack;
     void Start(){
         attack = GetComponentInParent<Attack_Behavior>();
+        
+        if(attack.player == "Player1"){
+            enemy = "Player2";
+        }else{
+            enemy = "Player";
+        }
     }
 
     void OnTriggerStay2D(Collider2D collision)
