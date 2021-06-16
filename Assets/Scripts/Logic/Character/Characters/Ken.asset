@@ -24,7 +24,7 @@ MonoBehaviour:
   jump_double_force: 22
   life: 20
   thoughness: 1
-  attack_speed: 3
+  attack_speed: 2.8
   damage: 1
   hurt: {fileID: 0}
   combo_list: []

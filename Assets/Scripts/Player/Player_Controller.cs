@@ -108,16 +108,4 @@ public class Player_Controller : MonoBehaviour
             collider.size = S/5;
             collider.offset = new Vector2 (0, S.y/10f);
     }
-    /*          -to Basic Attack-
-            Vector2 S = sprite.bounds.size;
-            collider.size = S/14;
-            collider.offset = new Vector2 (S.y/14f, S.y/6f);   
-
-                -to Large Ranger-
-    
-                -To Split Attack-
-            Vector2 S = sprite.bounds.size;
-            collider.size = S/14;
-            collider.offset = new Vector2 (S.y/14f, S.y/20f);   
-    */
 }
